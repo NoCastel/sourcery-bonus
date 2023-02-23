@@ -23,3 +23,4 @@ In the react directory(scr/main/js) run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
 
+There's a test file csv_file.csv in the task(top level) folder.\

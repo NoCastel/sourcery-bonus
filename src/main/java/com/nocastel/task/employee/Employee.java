@@ -1,5 +1,6 @@
 package com.nocastel.task.employee;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -12,10 +13,15 @@ class Employee {
     @GeneratedValue
     private Long id;
 
+    @Column(name = "name")
     private String name;
+    
+    @Column(name = "email")
     private String email;
-    private Long phoneNumber;
 
+    @Column(name = "phoneNumber")
+    private Long phoneNumber;
+    
     Employee() {
     }
 

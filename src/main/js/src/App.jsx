@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { v4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
+
 import './App.css';
 import Employee from './Employee/Employee';
 
@@ -53,7 +54,7 @@ function App() {
       </header>
       <main>
         <div style={{ backgroundColor: "white", color: "black" }}>
-          {employees.map(e => <Employee key={v4} values={e} />)}
+          {employees.map(e => <Employee key={uuidv4()} values={e} />)}
 
         </div>
       </main >
