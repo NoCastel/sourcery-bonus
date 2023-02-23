@@ -16,6 +16,9 @@ class Employee {
     private String email;
     private Long phoneNumber;
 
+    Employee() {
+    }
+
     Employee(String name, String email, Long phoneNumber) {
         this.name = name;
         this.email = email;
