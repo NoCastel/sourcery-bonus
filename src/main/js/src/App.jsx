@@ -28,7 +28,7 @@ function App() {
     })
       .then(res => console.log(res))
       .catch(err => console.log(err));
-    // setFile({});
+    setFile({});
     setSendCsv(sendCsv ? false : true);
   }
 
@@ -42,21 +42,16 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App" >
       <header className="App-header">
-        <div>
+        <div class="csv-form">
           <input type="file" onChange={handleFileChange} />
-
           <div>{file && `${file.name} - ${file.type}`}</div>
-
           <button onClick={handleUploadClick}>Upload</button>
         </div>
       </header>
-      <main>
-        <div style={{ backgroundColor: "white", color: "black" }}>
+        <main class ="mainFrame" >
           {employees.map(e => <Employee key={uuidv4()} values={e} />)}
-
-        </div>
       </main >
     </div >
   );
