@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { v4 } from 'uuid';
 import './App.css';
+import Employee from './Employee/Employee';
 
 function App() {
   const [file, setFile] = useState({});
@@ -47,18 +49,15 @@ function App() {
           <div>{file && `${file.name} - ${file.type}`}</div>
 
           <button onClick={handleUploadClick}>Upload</button>
-        </div>  
+        </div>
       </header>
       <main>
-        <div style={{backgroundColor:"white", color : "black"}}>
-          {employees.map(e => <div key={e["id"]} >
-             <span>{e["name"]}, </span>
-             <span>{e["email"]}, </span>
-             <span>{e["phoneNumber"]} </span>
-             </div>)}
+        <div style={{ backgroundColor: "white", color: "black" }}>
+          {employees.map(e => <Employee key={v4} values={e} />)}
+
         </div>
-      </main>
-    </div>
+      </main >
+    </div >
   );
 }
 
