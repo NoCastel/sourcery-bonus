@@ -33,7 +33,6 @@ function App() {
     axios.get('http://localhost:8080/employees')
       .then(res => {
         setEmployees(res.data);
-        console.log(employees);
       }
       )
   }, [sendCsv]);
@@ -52,7 +51,7 @@ function App() {
       </header>
       <main>
         <div style={{backgroundColor:"white", color : "black"}}>
-          {employees.map(e => <div>
+          {employees.map(e => <div key={e["id"]} >
              <span>{e["name"]}, </span>
              <span>{e["email"]}, </span>
              <span>{e["phoneNumber"]} </span>
